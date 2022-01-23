@@ -11,42 +11,50 @@
 
 <!--Header section-->
 
-
 <!--Main page-->
 
 <section class="home" id="home">
     <header>
-        <img src="Images/Earth.png" class="logo">
+        <img src="Images/Earth.png" class="logo">         
         
-        <div class="hamburger">
-            <div class="hamburger-header">
-              <button type="button" id="button">
-                <span></span>
-                <span></span> 
-                <span></span>
-              </button>
-            </div>
-             
-        <ul class="navbar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#articles">Articles</a></li>
-            <li><a href="#daily">Sport of the day</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <nav class="navbar">
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#article" class="nav-link">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#daily" class="nav-link">Sport of the day</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#footer" class="nav-link">Contact</a>
+                </li>
         </ul>
+        <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </button>
+        </div>
+    </nav>
+
 </header>
     
-    <video src="Video.mp4" muted loop autoplay></video>
+    <video src="Video1.mp4" muted loop autoplay></video>
     <div class="overlay"></div>
 
       
     <div class="home-text">
         <h1>Alternative sports</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+        <p>Latest news within the field of alternative sports<br>
         Debitis veritatis voluptate officiis vero!<br></p>
 
 
-    <a href="https://stackoverflow.com">Sport of the day</a>
-    <a href=".daily" class="btn">Latest news</a>
+    <a href="#daily">Sport of the day</a>
+    <a href="#article" class="btn">Latest news</a>
 </div>
 </section>
 
@@ -56,17 +64,17 @@
 
 <section class="article" id="article">
 
-  <h1 class="heading">Latest news in the world of <span>Alternative sports</span></h1>
-
   <div class="box-container">
 
-        <div class="box">
+  <h1 class="heading">Latest news in the world of <span>Alternative sports</span></h1>
+        
+  <div class="box">
             <img src="Images/Latest-8.jpeg">
             <h3>Chessboxing</h3>
             <p>Lorem ipsum dolor sit amet, <br>
             Cupiditate sit dolorem temporibus <br> 
             alias blanditiis tenetur!</p>
-            <a href="#" class="btn">learn more</a>
+            <a href="#" class="btn">Read more</a>
         </div>
 
         <div class="box">
@@ -75,7 +83,7 @@
             <p>Lorem ipsum dolor sit amet, <br>
                 Cupiditate sit dolorem temporibus <br> 
                 alias blanditiis tenetur!</p>
-            <a href="#" class="btn">learn more</a>
+            <a href="#" class="btn">Read more</a>
         </div>
 
         <div class="box">
@@ -84,7 +92,7 @@
             <p>Lorem ipsum dolor sit amet, <br>
                 Cupiditate sit dolorem temporibus <br> 
                 alias blanditiis tenetur!</p>
-            <a href="#" class="btn">learn more</a>
+            <a href="#" class="btn">Read more</a>
         </div>
 
         <div class="box">
@@ -93,26 +101,9 @@
             <p>Lorem ipsum dolor sit amet, <br>
             Cupiditate sit dolorem temporibus <br> 
             alias blanditiis tenetur!</p>
-            <a href="#" class="btn">learn more</a>
+            <a href="#" class="btn">Read more</a>
         </div>
 
-        <div class="box">
-            <img src="Images/Latest-6.jpeg">
-            <h3>Dog Surfing</h3>
-            <p>Lorem ipsum dolor sit amet, <br>
-            Cupiditate sit dolorem temporibus <br> 
-            alias blanditiis tenetur!</p>
-            <a href="#" class="btn">learn more</a>
-        </div>
-
-        <div class="box">
-            <img src="Images/Latest-6.jpeg">
-            <h3>Dog Surfing</h3>
-            <p>Lorem ipsum dolor sit amet, <br>
-            Cupiditate sit dolorem temporibus <br> 
-            alias blanditiis tenetur!</p>
-            <a href="#" class="btn">learn more</a>
-        </div>
 
   </div>
 
@@ -127,6 +118,10 @@
         <h1 class="heading">Alternative sport <span>of the day</span></h1>
       
         <div class="box-container">
+            
+            <div class="box">
+                <img src="Images/Daily-1.jpeg">
+            </div>
 
               <div class="box">
                 <h3>Giant Pumpkin Kayaking</h3>
@@ -135,15 +130,15 @@
                 alias blanditiis tenetur!</p>
                 <a href="#" class="btn">learn more</a>
             </div>
-            
-            <div class="box">
-                <img src="Images/Daily-1.jpeg">
-            </div>
-              
+          
         </div>
 </section>
 
-<section class="footer">
+<!--Sport of the day page - Ends -->
+
+<!--Footer -->
+
+<section class="footer" id="footer">
     <div class="box-container">
         <div class="box">
 
@@ -155,9 +150,9 @@
 
 </section>
 
+<!--Footer -Ends -->
 
 <script src="script.js"></script>
-
     
 </body>
 </html>

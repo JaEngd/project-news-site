@@ -1,11 +1,13 @@
-let button = document.getElementById('button');
-let navbar = document.getElementById('navbar');
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
+hamburger.addEventListener("click", () => {
+	hamburger.classList.toggle("active");
+	navMenu.classList.toggle("active");
+})
 
-button.addEventListener('click', navbarOn);
-
-function navbarOn(){
-	button.navbar.toggle('active');
-	navbar.navbar.toggle('active');
-
-}
+document.querySelectorAll(".nav-link").forEach(n => n.
+	addEventListener("click",() => {
+		hamburger.classList.remove("active");
+		navMenu.classList.remove("active");
+	}))

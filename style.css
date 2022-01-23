@@ -5,7 +5,7 @@
     outline: none;
     border: none;
     scroll-behavior: smooth;
-    scroll-padding-top: 2rem;
+    scroll-padding-top: 0;
     text-transform: capitalize;
     list-style: none;
     text-decoration: none;
@@ -13,17 +13,22 @@
     transition: all .3s cubic-bezier(.16,.8,.62,1.52);
 }
 
-
 .section{
     min-height: 100vh;
     padding: 0 7%;
-    padding-top: 9rem;
+    padding-top: 9rem;  
 }
 
 html{
   overflow-x: hidden;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative
+}
 
 /*/ Button /*/
 .btn{
@@ -45,22 +50,6 @@ html{
   transition: .2s;
 }
 
-/*/ Hamburger /*/
-
-button {
-  position: fixed;   
-  top: 30px;
-  right: 20px;
-  padding: 20px;
-  background: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  display: none;
-  z-index: 1000;
-  border-radius: 3px;
-}
-
 button span{
   display: block;
   width: 30px;
@@ -69,24 +58,7 @@ button span{
   transition: .3s transform ease-in;
 }
 
-button span+span{
-  margin-top: 6px;
-}
-
-button.active span:nth-child(2){
-  opacity: 0;
-}
-
-button.active span:nth-child(1){
-  transform: rotate(10deg) translateY(10px) translateX(2px);
-
-}
-
-button.active span:nth-child(3){
-  transform: rotate(-5deg) translateY(-5px) translateX(2px);
-}
-
-/*/ Hamburger ends /*/
+/*/--- Hamburger ends ---/*/
 
 /*/----- Home -----/*/ 
 .home{
@@ -121,9 +93,48 @@ header {
     height: 50px;
 }
 
+/*/----- Navbar -----/*/ 
 .navbar{
-    position: relative;
+    min-height: 70px;
+    padding: 0 24px;
     display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+}
+
+.nav-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px; 
+}
+
+.nav-branding{
+  font-size: 2rem;
+}
+
+.nav-link{
+  transition: 0.7s ease;
+}
+
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3 ease-in-out;
+  background-color: white;
+}
+
+li{
+  list-style: none; 
 }
 
 .navbar a{
@@ -136,10 +147,15 @@ header {
 .navbar a:hover{
     color: rgb(28, 179, 28);
 }
+/*/----- Navbar ends -----/*/
 
+
+
+
+/*/----- Home -----/*/ 
 .home{
-    width: 100%;
-    min-height: 100vh;
+  width: 100%;
+  min-height: 100vh;
 }
 
 /*/ Background video /*/
@@ -208,11 +224,14 @@ header {
   }
 /*/----- Home page ends -----/*/
 
-/*/----- Article -----/*/
 
+
+/*/----- Article -----/*/
 .article{
   background: #222;
-  padding: 40px 100px;
+  padding: 100px 100px;
+  position: relative;
+  align-items: center;
 }
  
 .heading{
@@ -226,6 +245,7 @@ header {
 
 .article .heading{
   text-align: center;
+  margin-bottom: 50px;
   padding: 2rem;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
                0px 8px 13px rgba(0,0,0,0.1),
@@ -242,40 +262,61 @@ header {
 .article .box-container .box{
   background: #fff;
   border: .1rem solid rgba(0,0,0,.1);
-  padding: 2rem;
-  margin: 2rem;
-  border-radius: .5rem;
+  padding: .2rem;
+  margin: .8rem;
+  border-radius: .2rem;
   box-shadow: 0 .5rem rgba(0,0,0,.1);
   text-align: center;
+  
+}
+
+.article h1{
+  padding: 2rem;
 }
 
 .article .box-container .box img{
-  width: 20rem;
+  height: 8rem;
+  padding: .2rem;
+  margin-top: 10px;
 }
 
 .article .box-container .box h3{
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #666;
-  padding: 1rem 0;
+  padding: .4rem 0;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.2),
                0px 8px 13px rgba(0,0,0,0.1),
                0px 18px 23px rgba(0,0,0,0.1);
 }
 
 .article .box-container .box p{
-  font-size: 1.4rem;
+  font-size: .8rem;
   color: #999;
-  padding: .5rem;
+  padding: .2rem;
 }
 
 .article .box-container .box:hover{
   transform: translateY(-1rem);
 }
 
+.article .btn{
+  line-height: 3rem;
+  font-size: 15px;
+  color: black;
+  margin: 10px;
+  padding: 7px 22px;
+  text-decoration: none;
+  border: 1px solid rgb(28, 179, 28);
+  border-radius: 25px;
+}
+/*/----- Article page ends -----/*/
+
+
+
 
 /*/ ----- Alternative sport of the day ------- /*/
 .daily{
-  background: rgb(119, 119, 119); 
+  background: rgb(27, 27, 27); 
   padding: 40px 100px;
 }
 
@@ -311,23 +352,44 @@ header {
 
 .daily .box-container .box{
   padding: 2rem;
-  margin: 2rem;
+  margin: 1rem;
   border-radius: .5rem;
-  text-align: left;
+  text-align: center;
 }
 
 .daily .box-container .box img{
   width: 25rem;
+  border-radius: 10px;
+  box-shadow: 1 .5rem rgba(10, 10, 10, 0.1);
+
 }
+
+.daily .btn{
+  line-height: 3rem;
+  font-size: 15px;
+  color: white;
+  margin: 30 40px;
+  padding: 10px 30px;
+  text-decoration: none;
+  border: 1px solid rgb(28, 179, 28);
+  border-radius: 25px;
+}
+
+.daily .box-container .box img:hover{
+  transform: translateY(-1rem);
+}
+
+
 
 /*/ Alternative sport of the day - Ends /*/
 
-/*/----- Footer -----/*/
 
+
+/*/----- Footer -----/*/
 .footer{
   min-height: auto;
   padding-top: 0;
-  background: #333;
+  background: rgb(27, 27, 27); 
 }
 
 .footer .box-container{
@@ -342,14 +404,14 @@ header {
 }
 
 .footer .box-container .box h3{
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #fff;
   padding-bottom: 2rem;
   font-weight: normal;
 }
 
 .footer .box-container .box p{
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #fff;
   padding-bottom: 1rem 0;
   font-weight: normal;
@@ -360,70 +422,47 @@ header {
   text-align: center;
   color: #fff;
   font-weight: normal;
-  font-size: 2rem;
-  border-top: .1rem solid #fff;
+  font-size: 1rem;
+  border-top: .1rem 
 }
+/*/----- Footer - ends -----/*/
 
 
 
 /*/----- Media queries -----/*/
-
-
-
-
-@media screen and (max-width: 768px)
-{
-  body
-  {
-    overflow-y: hidden;
-  }
-  .navbar
-  {
-    position: absolute;
-    right: 6px;
-    height: 20vh;
-    top: 8vh;
-    display: flex;
-    flex-direction: column;
-    background-color: transparent;
-    align-items: right;
-    width: 20%;
-    transform: translateZ(100%);
-    transition: 0.1s ease-in;
-  }
-  .navbar li 
-  {
-      opacity: 0;
-  }
-button
-  {
+@media(max-width:768px){
+  .hamburger{
     display: block;
   }
-  .btn
-  {
-    position: relative;
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
   }
-
-
-
-
-
-
- 
-
-/*/ --- Hamburger --- /*/
-  .navbar
-  {
-      transform: translateZ(0%);
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu{
+    position: fixed;
+    left: -100%;
+    top: 0;
+    gap: 0;
+    flex-direction: column;
+    font-size: 60px;
+    background-color: #111;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
   }
   
-  @keyframes navLinkFade{
-    from{
-      opacity: 0;
-      transform: translateZ(50px);
-    }
-    to{
-      opacity: 1;
-      transform: translateZ(0px);
-    }
+  .nav-item{
+    margin: 16px 0;
   }
+  .nav-menu.active{
+    left: 0;
+  }
+
+}
+
+
